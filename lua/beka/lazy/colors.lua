@@ -10,6 +10,7 @@ end
 
 return { 
      "folke/tokyonight.nvim",
+     "catppuccin/nvim",
      lazy = true,
      opts = {}
 }
