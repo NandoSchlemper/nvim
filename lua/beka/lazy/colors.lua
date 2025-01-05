@@ -1,13 +1,15 @@
-function ReColor(color) 
-    color = color or "tokyonight-moon"
-    vim.cmd.colorscheme(color)
+function C(color) 
+    if color == "dark" then
+        vim.cmd.colorscheme 'tokyonight-storm'
+    elseif color == "light" then
+        vim.cmd.colorscheme 'catppuccin-latte'
+    else
+        vim.cmd.colorscheme 'tokyonight'
+    end
 end
 
 return { 
      "folke/tokyonight.nvim",
      lazy = true,
-     opts = {},
-     config = function() 
-        ReColor()
-     end
+     opts = {}
 }
