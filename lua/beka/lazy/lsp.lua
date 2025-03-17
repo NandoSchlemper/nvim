@@ -13,13 +13,15 @@ return {
         "saadparwaiz1/cmp_luasnip",
         "j-hui/fidget.nvim",
     },
-     config = function()
+    config = function()
         require("conform").setup({
             formatters_by_ft = {
             }
         })
         local cmp = require('cmp')
         local cmp_lsp = require("cmp_nvim_lsp")
+
+
         local capabilities = vim.tbl_deep_extend(
             "force",
             {},
@@ -39,7 +41,6 @@ return {
                         capabilities = capabilities
                     }
                 end,
-
                 zls = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.zls.setup({
@@ -54,7 +55,6 @@ return {
                     })
                     vim.g.zig_fmt_parse_errors = 0
                     vim.g.zig_fmt_autosave = 0
-
                 end,
                 ["lua_ls"] = function()
                     local lspconfig = require("lspconfig")
